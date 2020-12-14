@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit todo</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">Edit todo list</h2>
+        <form method="post" action="/todo/edit/<%= item._id %>?_method=PUT">
+        <input type="text" id="myInput" placeholder="Title..." name="item" value="<%= item.item %>">
+        <input class="addBtn" type="submit" value="Update">
+        </form>
+        
+      </div>
+</body>
+</html>

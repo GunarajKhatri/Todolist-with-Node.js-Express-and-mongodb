@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">My To Do List</h2>
+        <form action="/todo" method="post">
+        <input type="text" id="myInput" placeholder="Title..." name="item">
+        <input class="addBtn" type="submit" value="Add">
+        </form>
+        
+      </div>   
+      <ul id="myUL">
+          <% items.forEach((items)=>{ %>
+        <li><%= items.item %><a href="/todo/edit/<%= items._id %>"><span style='font-size:20px;float:right;cursor: pointer;'>&#9997;</span></a><span style='font-size:20px;float: right;cursor: pointer;margin-right:20px;' onclick="document.getElementById('myForm-<%= items._id %>').submit();">&#10006;</span>
+          <form id="myForm-<%= items._id %>" method="post" action="/todo/remove/<%= items._id %>?_method=DELETE">
+            <!-- <input type="hidden" name="_method" value="DELETE"> -->
+          </form>  
+        </li>
+        <%})%>
+      </ul>
+</body>
+</html>
