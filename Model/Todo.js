@@ -4,7 +4,10 @@ mongoose.connect('mongodb://localhost/todolist', {
 });
 const Schema = mongoose.Schema;
 const Todo = new Schema({
-    item:String
+    item:{
+    type:String, 
+    required:true
+    }
   });
 const MyModel = mongoose.model('Todo', Todo);
 module.exports=MyModel;

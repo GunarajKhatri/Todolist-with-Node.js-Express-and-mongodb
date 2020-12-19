@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <div>
+    <%- messages('message', locals) %>
+  </div>
     <div id="myDIV" class="header">
+      <a href="/logout" style="float:right;margin:5px;color:white;text-decoration: none;">Logout</a>
         <h2 style="margin:5px">My To Do List</h2>
+       
         <form action="/todo" method="post">
         <input type="text" id="myInput" placeholder="Title..." name="item">
         <input class="addBtn" type="submit" value="Add">
+        
         </form>
         
       </div>   

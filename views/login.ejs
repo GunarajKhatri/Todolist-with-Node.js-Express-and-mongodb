@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <% if (message.error!=null) { %>
+    <div style="padding: 20px;
+    background-color: #f44336;
+    color: white;text-align: center;">
+    
+        <p style="color: white;" class="text-center"><%= message.error %></p>
+      
+    </div>
+    <% } %>
+    <form action="/login" method="post">
+        <div class="container">
+          <h1>Login</h1>
+
+          <hr>
+         
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" >
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="psw">
+      
+          <hr>
+       
+      
+          <button type="submit" class="registerbtn">Login</button>
+        </div>
+        
+        
+      </form>
+</body>
+</html>
